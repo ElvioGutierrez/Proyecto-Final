@@ -28,7 +28,7 @@ while(1):
     if resultado.multi_hand_landmarks:
         for mano in resultado.multi_hand_landmarks:
             for id, lm in enumerate(mano.landmark):
-                alto, ancho, c = frame.pygame.PixelArray.shape
+                alto, ancho, c = frame.shape
                 corx, cory = int(lm.x*ancho), int(lm.y*alto)
                 posiciones.append([id, corx, cory])
                 dibujo.draw_landmarks(frame, mano, clase_manos.HAND_CONNECTIONS)
