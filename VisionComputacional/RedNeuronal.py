@@ -46,3 +46,9 @@ imagen_validacion = preprocesamiento_vali.flow_from_directory(
     batch_size=batch_size,
     class_mode='categorical'
 )
+cnn.add(Convolution2D(filtrosconv1, tam_filtro1, padding = 'same'), input_shape=(altura, longitud, 3), activation = 'relu')
+cnn.add(MaxPooling2D(pool_size=tam_pool))
+
+cnn.add(Convolution2D(filtrosconv2, tam_filtro2, padding = 'same', activation = 'relu'))
+cnn.add(MaxPooling2D(pool_size = tam_pool))
+
