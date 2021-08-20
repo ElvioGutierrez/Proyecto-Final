@@ -52,3 +52,10 @@ cnn.add(MaxPooling2D(pool_size=tam_pool))
 cnn.add(Convolution2D(filtrosconv2, tam_filtro2, padding = 'same', activation = 'relu'))
 cnn.add(MaxPooling2D(pool_size = tam_pool))
 
+cnn.add(Convolution2D(filtrosconv3, tam_filtro3, padding = 'same', activation = 'relu'))
+cnn.add(MaxPooling2D(pool_size = tam_pool))
+cnn.add(Flatten())
+cnn.add(Dense(640, activation = 'relu'))
+cnn.add(Dropout(0.5))
+cnn.add(Dense(clases, activation='softmax' ))
+
