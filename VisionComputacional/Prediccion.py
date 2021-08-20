@@ -3,7 +3,7 @@ import cv2
 import mediapipe as mp
 import os
 import numpy as np
-from keras_preprocessing.image import load_img img_to_array
+from keras_preprocessing.image import load_img, img_to_array
 from keras.models import load_model
 
 modelo = '#'
