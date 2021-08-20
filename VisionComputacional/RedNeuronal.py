@@ -59,3 +59,8 @@ cnn.add(Dense(640, activation = 'relu'))
 cnn.add(Dropout(0.5))
 cnn.add(Dense(clases, activation='softmax' ))
 
+optimizar = tensorflow.keras.optimizers.Adam(learning_rate = lr)
+cnn.fir(imagen_entreno, steps_per_epoch = pasos, epochs = iteraciones, validation_data = imagen_validacion, validaton_steps = pasos_validacion)
+
+cnn.save('ModeloVocales2.h5')
+cnn.save_weights('pesosVocales2.h5')
