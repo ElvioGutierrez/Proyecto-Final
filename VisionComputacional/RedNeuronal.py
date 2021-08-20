@@ -34,3 +34,15 @@ preprocesamiento_entre = ImageDataGenerator(
 preprocesamiento_vali = ImageDataGenerator(
     rescale = "1./255"
 )
+image_entreno = preprocesamiento_entre.flow_from_directory(
+    datos_entrenamiento,
+    target_size=(altura, longitud),
+    batch_size=batch_size,
+    class_mode='categorical',
+)
+imagen_validacion = preprocesamiento_vali.flow_from_directory(
+    datos_validacion,
+    target_size=(altura, longitud),
+    batch_size=batch_size,
+    class_mode='categorical'
+)
