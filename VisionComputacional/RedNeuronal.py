@@ -4,6 +4,8 @@ from tensorflow.python.keras.models import Sequential
 from tensorflow.python.keras.layers import Dropout, Flatten, Dense, Activation_#
 from tensorflow.python.keras.layers import Convolution2D, MaxPooling2D
 from tensorflow.python.keras import backend as K
+from mtcnn import MTCNN 
+import cv2
 
 K.clear_session()
 
@@ -46,6 +48,8 @@ imagen_validacion = preprocesamiento_vali.flow_from_directory(
     batch_size=batch_size,
     class_mode='categorical'
 )
+cnn = Sequential()
+
 cnn.add(Convolution2D(filtrosconv1, tam_filtro1, padding = 'same'), input_shape=(altura, longitud, 3), activation = 'relu')
 cnn.add(MaxPooling2D(pool_size=tam_pool))
 
